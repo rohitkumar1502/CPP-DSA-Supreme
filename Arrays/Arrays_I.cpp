@@ -1,17 +1,33 @@
 #include <iostream>
+#include <limits.h>
 using namespace std;
 
-void printArray(int arr[], int size){
-    for(int i = 0; i < size; i++){
-        cout<<arr[i]<<" ";
-        
+void printArray(int arr[], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << " ";
     }
-    cout<<endl;
+    cout << endl;
 }
-void inc(int arr[], int size){
-    arr[0]= arr[0]+10;
+
+void inc(int arr[], int size)
+{
+    arr[0] = arr[0] + 10;
     printArray(arr, size);
 }
+
+// bool find(int arr[], int size, int key)
+// {
+//     for (int i = 0; i < size; i++)
+//     {
+//         if (arr[i] == key)
+//         {
+//             return true;
+//         }
+//         return false;
+//     }
+// }
 
 int main()
 {
@@ -96,10 +112,102 @@ int main()
       cout<<arr[i]<<" ";
     }
     */
-    int arr[] = {5, 6};
-    int size = 2;
-    inc(arr, size);
-    printArray(arr, size);
+    /*
+     int arr[] = {5, 6};
+     int size = 2;
+     inc(arr, size);
+     printArray(arr, size);
+     */
+    /*
+    int arr[] = {9, 5, 7, 3, 6};
+    int size = 5;
+    cout << "Enter the Key which one you want to find";
+    int key;
+    cin >> key;
+    if (find(arr, size, key))
+    {
+        cout << "Find" << endl;
+    }
+    else
+    {
+        cout << "Not find" << endl;
+    }
+    */
+    /*
+     int arr[] = {1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 2, 5, 7};
+     int size = 18;
+     int numZero = 0;
+     int numOne = 0;
+
+     for (int i = 0; i < size; i++)
+     {
+         if (arr[i] == 0)
+         {
+             numZero++;
+         }
+         if (arr[i] == 1)
+         {
+             numOne++;
+         }
+     }
+     cout << "Number of Zeroes: " << numZero << endl;
+     cout << "Number of Zeroes: " << numOne << endl;
+     */
+/*
+    int arr[] = {2, 5, 23, 5, 7, 3, 98, 33, 7, 2};
+    int size = 10;
+    int maxi = INT_MIN;
+    int mini = INT_MAX;
+
+    for (int i = 0; i < size; i++)
+    {
+        if (arr[i] > maxi)
+        {
+            maxi = arr[i];
+        }
+    }
+    cout << "Maximum number is : " << maxi << endl; // Finding Maximum number INT_MIN
+    for (int i = 0; i < size; i++)
+    {
+        if (arr[i] < mini)
+        {
+            mini = arr[i];
+        }
+    }
+    cout << "Minimum number is : " << mini << endl; // Finding Minimu number INT_MAX
+    */
+/*
+   int arr[]= {10,20,30,40,50,60,70,80,90};
+   int size = 9;
+   int start = 0;
+   int end = size -1;
+   while(start<=end){
+    if(start == end){
+        cout<<arr[start]<<" ";
+    }
+    else{
+        cout<<arr[start]<<" ";
+        cout<<arr[end]<<" ";
+    }
+    start++;
+    end--;
+   }
+   */
+//printing revese arrays on linear arrays 
+  int arr[] = {10,20,30,40,50,60,70,80};
+  int size = 8;
+  int start = 0;
+  int end = size -1;
+  while(start<=end){
+    swap(arr[start],arr[end]);
+
+    start++;
+    end--;
+
+  }
+  for(int i = 0; i < size; i++){
+    cout<<arr[i]<<" ";
+  }
 
     return 0;
 }
