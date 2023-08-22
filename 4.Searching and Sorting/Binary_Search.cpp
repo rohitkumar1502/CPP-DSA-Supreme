@@ -60,6 +60,33 @@ int firstOcurance(vector<int>v, int target){
     
 }
 
+int lastOcc(vector<int>v, int target){
+    int start = 0;
+    int end = v.size()-1;
+    int mid = end + (start-end)/2;
+    int ans = -1;
+    while (start<end)
+    {
+       if(v[mid]==target){
+        //ans will be store
+        ans = mid;
+        start = mid +1;
+       }
+       else if(target<v[mid]){
+        //left search
+        end = mid -1;
+       }
+       else if (target>v[mid]){
+        //right search
+        start = mid +1;
+       }
+       mid = end + (start-end)/2;
+    }
+    return ans;
+    
+
+}
+
 int main()
 {
     /*
@@ -90,7 +117,7 @@ int main()
         cout<<"Not Found";
     }
     */
-
+/*
    //Find first occurance of the element
    vector<int>v{1,3,3,3,3,3,3,4,4,4,4,6,7};
    int target = 4;
@@ -98,6 +125,13 @@ int main()
    cout<<"Ans is: "<<ans<<endl;
    auto ans2 = lower_bound (v.begin(), v.end(),target);
    cout<<"Ans 2 is: "<<ans2-v.begin()<<endl;
+*/
 
+//Find last occurance of the element
+  vector<int> v{1,3,7,7,7,7,7,7,7,7,7,7,7,7,9};
+  int target = 7;
+
+  int ans = lastOcc(v, target);
+  cout << "Last occurence is at " << ans << endl;
  return 0;
 }
