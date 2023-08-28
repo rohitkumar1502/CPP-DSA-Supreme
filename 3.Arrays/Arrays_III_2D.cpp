@@ -1,5 +1,5 @@
 #include <iostream>
-#include<vector>
+#include <vector>
 using namespace std;
 
 int maxiMum(int arr[][3], int row, int col)
@@ -103,28 +103,32 @@ void tRanpose(int arr[][3], int row, int col, int tranpose[3][3])
         cout << endl;
     }
 }
-bool find(int arr[][3], int row, int col, int key){
-    for(int i = 0; i<row; i++){
-        for(int j = 0; j<col; j++){
-            if(arr[i][j]==key){
+bool find(int arr[][3], int row, int col, int key)
+{
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < col; j++)
+        {
+            if (arr[i][j] == key)
+            {
                 return true;
                 break;
             }
         }
-
     }
     return false;
 }
 
-void printArrays1(vector<vector<int> >arr){
-    for(int i =0; i<arr.size(); i++){
-        for(int j =0; j<arr[i].size(); j++){
-            cout<<arr[i][j]<<" ";
+void printArrays1(vector<vector<int>> arr)
+{
+    for (int i = 0; i < arr.size(); i++)
+    {
+        for (int j = 0; j < arr[i].size(); j++)
+        {
+            cout << arr[i][j] << " ";
         }
-        cout<<endl;
-
+        cout << endl;
     }
-
 }
 int main()
 {
@@ -235,11 +239,44 @@ int main()
     }
     tRanpose(arr, row, col, transpose);
     */
- /*
-    // Search element in arrays
-    int arr[3][3];
-    int row = 3;
-    int col = 3;
+    /*
+       // Search element in arrays
+       int arr[3][3];
+       int row = 3;
+       int col = 3;
+       for (int i = 0; i < row; i++)
+       {
+           for (int j = 0; j < col; j++)
+           {
+               cin >> arr[i][j];
+           }
+       }
+       int key;
+       cout << "Enter the key which one you want to find :";
+       cin >> key;
+       if (find(arr, row, col, key))
+           cout << "Find It";
+      else{
+       cout<<"Not find";
+      }
+      */
+    /*
+      int row,col;
+      cout<<"Enter the row and col: "<<endl;
+      cin>>row>>col;
+      vector<vector<int> >arr(row,vector<int>(col,-8));
+      for(int i =0; i<row; i++){
+        for(int j = 0; j<col; j++){
+            cout<<arr[i][j];
+        }
+        cout<<endl;
+      }
+      */
+    int row, col;
+    cout << "Enter the row and col: ";
+    cin >> row >> col;
+    cout << "Enter the element in arrays: ";
+    vector<vector<int>> arr(row, vector<int>(col));
     for (int i = 0; i < row; i++)
     {
         for (int j = 0; j < col; j++)
@@ -247,36 +284,5 @@ int main()
             cin >> arr[i][j];
         }
     }
-    int key;
-    cout << "Enter the key which one you want to find :";
-    cin >> key;
-    if (find(arr, row, col, key))
-        cout << "Find It";
-   else{
-    cout<<"Not find";
-   }
-   */
-/*
-  int row,col;
-  cout<<"Enter the row and col: "<<endl;
-  cin>>row>>col;
-  vector<vector<int> >arr(row,vector<int>(col,-8));
-  for(int i =0; i<row; i++){
-    for(int j = 0; j<col; j++){
-        cout<<arr[i][j];
-    }
-    cout<<endl;
-  }
-  */
- int row,col;
- cout<<"Enter the row and col: ";
- cin>>row>>col;
- cout<<"Enter the element in arrays: ";
- vector<vector<int> >arr(row, vector<int>(col));
- for(int i = 0; i<row; i++){
-    for(int j = 0; j<col; j++){
-        cin>>arr[i][j];
-    }
- }
- printArrays1(arr);
+    printArrays1(arr);
 }
