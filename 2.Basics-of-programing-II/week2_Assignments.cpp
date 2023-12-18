@@ -14,7 +14,7 @@ int main(){
             else{
                 cout<<" "<<" ";
             }
-           
+
         }
         cout<<endl;
     }
@@ -26,7 +26,7 @@ int main(){
 #include<iostream>
 using namespace std;
 int main(){
-    int n; 
+    int n;
     cin>>n;
     for(int row = 0; row<n; row++){
         for(int col = row+1; col<= n; col++){
@@ -37,16 +37,16 @@ int main(){
             else{
                 cout<<" ";
             }
-           
+
         }
         cout<<endl;
 
-        
-    } 
+
+    }
     return 0;
 }
 */
-
+/*
 //Numeric palindrome equilateral pyramid
 #include<iostream>
 using namespace std;
@@ -80,4 +80,32 @@ int main(){
 
 
 
+}
+*/
+
+// Solid half diamond
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin >> n;
+    for (int i = 0; i < 2 * n - 1; i++)
+    {
+        int cond = 0;
+        if (i < n)
+        {
+            cond = i; // growing phase of diamond
+        }
+        else
+        {
+            cond = n - (i % n) - 2; //shriking phase of diamond
+        }
+        for (int j = 0; j <= cond; j++)
+        {
+            cout << "*";
+        }
+        cout << endl;
+    }
+    return 0;
 }
