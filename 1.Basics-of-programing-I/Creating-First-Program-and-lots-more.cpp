@@ -2,17 +2,17 @@
 using namespace std;
 int main()
 {
-    // std::cout<<"Hello Duniya"<˜˜<std::endl;
+    //std::cout<<"Hello Duniya"<<std::endl;
 
     // cout<<"Hello Duniya"<<endl;
 
-    // int a = 5;
+    //int a = 5;
     // int b = 3;
     // cout << (a <= b) << endl; // print 0 means false
     // cout << (b <= a) << endl; // print 1 means true
 
-    // cout << !(a == 5);
-    // cout << (5)/((double)3);
+    //cout << !(a == 5);
+    //cout << (5)/((double)3);
 
     // Arithmetic Operators
 
@@ -30,23 +30,23 @@ int main()
     // cout<< sizeof(ch);
 
     // int num = 'A';
-    // cout<< num<<endl;
+    // cout<< num<<endl; 
 
-    // long long a = 5;
-    // cout << sizeof(a)<<endl;
+    //long long a = 5;
+   // cout << sizeof(unsigned char)<<endl;
     // int a = 5;
     // cout<<"Value of a is :"<<a<<endl;
-    // char ch = 256;  // Warning generated // char ch 'a';
-    // cout<<"Value of ch is :"<<ch<<endl;
+    //char ch = 256;  // Warning generated // char ch 'a';
+    //cout<<"Value of ch is :"<<ch<<endl;
     
     // bool flag = true; // flag = 1
     // cout<< "Value of flag is :"<<flag<<endl;
 
-    cout<<"Enter a number:"<<endl;
-    int a;
-    cin>>a; // taking input from here 
+    // cout<<"Enter a number:"<<endl;
+    // int a;
+    // cin>>a; // taking input from here 
 
-    cout<<"Your enter value is: "<<a<<endl;
+    // cout<<"Your enter value is: "<<a<<endl;
 
 
     return 0;

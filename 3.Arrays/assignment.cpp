@@ -1,5 +1,5 @@
 //Move all the negative number to the left side of the arrays
-
+/*
 #include<iostream>
 using namespace std;
 void moveAllElementLeft(int *a, int n){
@@ -24,10 +24,21 @@ int main(){
     moveAllElementLeft(a,n);
      for (int i = 0; i < n; i++)
      {
-        /* code */
+        
         cout<<a[i]<<" ";
      }
      cout<<endl;
      return 0;
      
 }
+*/
+
+// Missing elements from An arrays With Dublicate
+#include<iostream>
+using namespace std;
+int main(){
+    
+
+}
+
+

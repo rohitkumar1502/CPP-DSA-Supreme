@@ -204,7 +204,7 @@ int main()
       }
 
       */
-    /*
+   
    int n;
    cin >> n;
    for (int row = 0; row < n; row = row + 1)
@@ -215,8 +215,8 @@ int main()
        }
        cout << endl;
    }
-   */
-
+   
+  /*
     int n;
     cin >> n;
     for (int row = 0; row < n; row = row + 1)
@@ -226,5 +226,6 @@ int main()
             cout << col + 1;
         }
         cout << endl;
-    }
+    } */
+
 }
