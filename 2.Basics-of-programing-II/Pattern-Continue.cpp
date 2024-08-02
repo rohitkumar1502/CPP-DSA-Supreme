@@ -48,7 +48,7 @@ int main()
     //                                                                         * * * *
     //                                                                          * * *
     //                                                                           * *
-    // solid diamond                                                               *
+    // solid diamond                                                              *
     /*
         int n;
         cin >> n;
