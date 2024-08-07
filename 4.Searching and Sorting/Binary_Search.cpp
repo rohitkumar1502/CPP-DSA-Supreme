@@ -41,8 +41,6 @@ int firstOcurance(vector<int>v, int target){
              ans = mid;
              //left search
              end = mid -1;
-
-
         }
         else if(target < v[mid]){
             //search in left
