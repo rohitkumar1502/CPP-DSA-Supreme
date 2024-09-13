@@ -44,6 +44,21 @@ int main(){
 }
 */
 
-// Insertion sort
+//Selection Shorts
+
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+    vector<int> arr{4,2,5,6,0,3};
+    int n = arr.size();
+    for(int i = 0; i< n -1; i++){
+        int minIndex = i;
+        for(int j = minIndex +1; j<n; j++){
+            
+        }
+    }
+
+}
 
 

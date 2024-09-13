@@ -87,7 +87,7 @@ int lastOcc(vector<int>v, int target){
 
 int main()
 {
-    /*
+
     // Find the target element
     // element should be sorted then apply these concept
     int arr[] = {2, 3, 4, 8, 10, 12, 13};
@@ -102,7 +102,7 @@ int main()
     {
         cout << "Target Found at " << indexOftarget << " index" << endl;
     }
-  */
+
  /*
     //Found by using binarry in build search funcion 
     int arr2[]={1,2,3,4,5,6,7};
@@ -126,10 +126,10 @@ int main()
 */
 
 //Find last occurance of the element
-  vector<int> v{1,3,7,7,7,7,7,7,7,7,7,7,7,7,9};
-  int target = 7;
+//   vector<int> v{1,3,7,7,7,7,7,7,7,7,7,7,7,7,9};
+//   int target = 7;
 
-  int ans = lastOcc(v, target);
-  cout << "Last occurence is at " << ans << endl;
+//   int ans = lastOcc(v, target);
+//   cout << "Last occurence is at " << ans << endl;
  return 0;
 }
