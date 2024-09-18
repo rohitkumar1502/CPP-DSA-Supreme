@@ -1,64 +1,78 @@
-/*
-//Selection Shorts
-#include<iostream>
-#include<vector>
+//----- Selction sort ---------
+
+#include <iostream>
 using namespace std;
 
-int main(){
-    vector<int> arr{5,4,3,2,1};
-    int n = arr.size();
-    for(int i = 0; i < n-1; i++){
-         int minIndex = i;
-         for(int j = i+1; j<n; j++){
-            if(arr[j]<arr[minIndex]){
-                //new min will be store in minIndex
-                minIndex = j;
-            }
-         }
-         swap(arr[i],arr[minIndex]);
+void selctionSort(int arr[], int n)
+{
+  for (int i = 0; i < n - 1; i++)
+  {
+    int min = i;
+    for (int j = i; j < n; j++)
+    {
+      if (arr[j] < arr[min])
+      {
+        min = j;
+      }
     }
-    //Print the Selections short
-    for(int i =0; i<n; i++){
-        cout<<arr[i]<<" ";
-    }
-    return 0;
+    // int temp = arr[min];
+    // arr[min] = arr[i];
+    // arr[i] = temp; 
+    swap(arr[i], arr[min]);
+  }
 }
-*/
 
-
-/*
-//by using sort function
-#include<iostream>
-#include<vector>
-#include<algorithm>
-using namespace std;
-int main(){
-    vector<int> arr{10,1,5,7,3,8,6};
-    sort(arr.begin(),arr.end());
-     
-    // Printing the sorting arrays
-    for(int i = 0; i<arr.size(); i++){
-        cout<<arr[i]<<" ";
+void bubble_sort(int arr[], int n){
+  for(int i = n-1; i>0; i++){
+    int didSwap = false;
+    for(int j = 0; j< i; j++){
+      if(arr[j]> arr[j+1]){
+        swap(arr[j], arr[j+1]);
+        didSwap = true;
+      }
     }
-    return 0;
+    if(didSwap == false){
+      break;
+    }
+  }
 }
-*/
 
-//Selection Shorts
-
-#include<iostream>
-#include<vector>
-using namespace std;
-int main(){
-    vector<int> arr{4,2,5,6,0,3};
-    int n = arr.size();
-    for(int i = 0; i< n -1; i++){
-        int minIndex = i;
-        for(int j = minIndex +1; j<n; j++){
-            
-        }
+void insertion_sort(int arr[], int n){
+  for(int i =1; i<n; i++){
+    int val = arr[i];
+    int j = i-1;
+    for(; j>=0; j--){
+      if(arr[j]>val){
+        arr[j+1] = arr[j];
+      }
+      else{
+        break;
+      }
     }
+    arr[j+1] = val;
+  }
+}
+int main()
+{
+  int n;
+  cout<<"Enter N value: ";
+  cin >> n;
+  int arr[n];
+  cout<<"Enter the array: ";
+  for (int i = 0; i < n; i++)
+  {
+    cin >> arr[i];
+  }
 
+  // selctionSort(arr, n);
+  // bubble_sort(arr, n);
+  insertion_sort(arr, n);
+
+  // print the sorted array
+  for (int i = 0; i < n; i++)
+  {
+    cout << arr[i] << " ";
+  }
 }
 
 
