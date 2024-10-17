@@ -1,0 +1,110 @@
+// Coin Exchange
+/*
+coinExchange(5)               // Target = 5, mini = INT_MAX
+|
+|-- coinExchange(4)           // Target = 4, mini = INT_MAX
+|   |-- coinExchange(3)       // Target = 3, mini = INT_MAX
+|   |   |-- coinExchange(2)   // Target = 2, mini = INT_MAX
+|   |   |   |-- coinExchange(1)   // Target = 1, mini = INT_MAX
+|   |   |   |   |-- coinExchange(0)   // Base case: Target == 0 -> return 0
+|   |   |   |   |   ans = 0, mini = min(INT_MAX, 0 + 1) = 1
+|   |   |   |   |-- coinExchange(-1)   // Base case: Target < 0 -> return INT_MAX
+|   |   |   |   ans = 1, mini = min(INT_MAX, 1 + 1) = 2
+|   |   |   |-- coinExchange(0)   // Base case: Target == 0 -> return 0
+|   |   |   ans = 0, mini = min(2, 0 + 1) = 1
+|   |   ans = 1, mini = min(INT_MAX, 1 + 1) = 2
+|   |-- coinExchange(2)           // Target = 2, mini = INT_MAX
+|   |   |-- coinExchange(1)       // Target = 1, mini = INT_MAX
+|   |   |   |-- coinExchange(0)   // Base case: Target == 0 -> return 0
+|   |   |   |   ans = 0, mini = min(INT_MAX, 0 + 1) = 1
+|   |   |   |-- coinExchange(-1)  // Base case: Target < 0 -> return INT_MAX
+|   |   |   ans = 1, mini = min(1, 1 + 1) = 1
+|   |   |-- coinExchange(0)       // Base case: Target == 0 -> return 0
+|   |   ans = 0, mini = min(1, 0 + 1) = 1
+|   ans = 2, mini = min(2, 1 + 1) = 2
+|-- coinExchange(3)               // Target = 3, mini = INT_MAX
+|   |-- coinExchange(2)           // Target = 2, mini = INT_MAX
+|   |   |-- coinExchange(1)       // Target = 1, mini = INT_MAX
+|   |   |   |-- coinExchange(0)   // Base case: Target == 0 -> return 0
+|   |   |   |   ans = 0, mini = min(INT_MAX, 0 + 1) = 1
+|   |   |   |-- coinExchange(-1)  // Base case: Target < 0 -> return INT_MAX
+|   |   |   ans = 1, mini = min(INT_MAX, 1 + 1) = 1
+|   |   |-- coinExchange(0)       // Base case: Target == 0 -> return 0
+|   |   ans = 0, mini = min(1, 0 + 1) = 1
+|   ans = 2, mini = min(INT_MAX, 2 + 1) = 2
+|   |-- coinExchange(1)           // Target = 1, mini = INT_MAX
+|       |-- coinExchange(0)       // Base case: Target == 0 -> return 0
+|       |   ans = 0, mini = min(INT_MAX, 0 + 1) = 1
+|       |-- coinExchange(-1)      // Base case: Target < 0 -> return INT_MAX
+|       ans = 1, mini = min(1, 1 + 1) = 1
+ans = 3, mini = min(INT_MAX, 2 + 1) = 3
+
+*/
+
+
+// Q2
+
+/*
+solve(8, 3, 3, 3)
+  |
+  |-- solve(5, 3, 3, 3)
+  |     |-- solve(2, 3, 3, 3)
+  |     |     |-- solve(-1, 3, 3, 3) --> INT_MIN
+  |     |     |-- solve(-1, 3, 3, 3) --> INT_MIN
+  |     |     |-- solve(-1, 3, 3, 3) --> INT_MIN
+  |     |-- solve(2, 3, 3, 3) --> INT_MIN
+  |     |-- solve(2, 3, 3, 3) --> INT_MIN
+  |
+  |-- solve(5, 3, 3, 3) --> INT_MIN
+  |-- solve(5, 3, 3, 3) --> INT_MIN
+*/
+
+// Q3
+
+// Left Branch (Include arr[0] = 2):
+
+/*
+solve(arr, maxi, i=2, sum=2)
+  |
+  |-- Left Branch (Include `arr[2] = 4`)
+  |   solve(arr, maxi, i=4, sum=6) --> Base Case (Update maxi = 6)
+  |
+  |-- Right Branch (Exclude `arr[2] = 4`)
+      solve(arr, maxi, i=3, sum=2)
+        |
+        |-- Left Branch (Include `arr[3] = 9`)
+        |   solve(arr, maxi, i=5, sum=11) --> Base Case (Update maxi = 11)
+        |
+        |-- Right Branch (Exclude `arr[3] = 9`)
+            solve(arr, maxi, i=4, sum=2) --> Base Case (No change to maxi)
+*/
+
+// Right Branch (Exclude arr[0] = 2):
+
+/*
+solve(arr, maxi, i=1, sum=0)
+  |
+  |-- Left Branch (Include `arr[1] = 1`)
+  |   solve(arr, maxi, i=3, sum=1)
+  |     |
+  |     |-- Left Branch (Include `arr[3] = 9`)
+  |     |   solve(arr, maxi, i=5, sum=10) --> Base Case (No change to maxi)
+  |     |
+  |     |-- Right Branch (Exclude `arr[3] = 9`)
+  |         solve(arr, maxi, i=4, sum=1) --> Base Case (No change to maxi)
+  |
+  |-- Right Branch (Exclude `arr[1] = 1`)
+      solve(arr, maxi, i=2, sum=0)
+        |
+        |-- Left Branch (Include `arr[2] = 4`)
+        |   solve(arr, maxi, i=4, sum=4) --> Base Case (No change to maxi)
+        |
+        |-- Right Branch (Exclude `arr[2] = 4`)
+            solve(arr, maxi, i=3, sum=0)
+              |
+              |-- Left Branch (Include `arr[3] = 9`)
+              |   solve(arr, maxi, i=5, sum=9) --> Base Case (No change to maxi)
+              |
+              |-- Right Branch (Exclude `arr[3] = 9`)
+                  solve(arr, maxi, i=4, sum=0) --> Base Case (No change to maxi)
+*/
