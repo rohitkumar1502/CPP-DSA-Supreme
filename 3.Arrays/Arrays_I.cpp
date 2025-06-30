@@ -8,7 +8,7 @@ void printArray(int arr[], int size)
     {
         cout << arr[i] << " ";
     }
-    cout << endl;
+//    cout << endl;
 }
 
 void inc(int arr[], int size)
